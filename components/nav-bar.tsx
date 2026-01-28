@@ -21,7 +21,7 @@ export default function NavBar() {
 
   return (
     <>
-      <nav className="p-4 fixed w-full z-40">
+      <nav className="p-4 fixed w-full z-40 h-16 md:h-20 backdrop-blur-xs md:backdrop-blur-none">
         <div className="flex items-center justify-between w-full max-w-6xl mx-auto">
           {/* Desktop Navigation */}
           <ul className="hidden md:flex items-center gap-3 border border-gray-200 px-2 py-1 rounded-md backdrop-blur-xs m-auto">

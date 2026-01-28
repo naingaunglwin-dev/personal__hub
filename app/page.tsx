@@ -4,7 +4,7 @@ import { TypeAnimation } from "react-type-animation";
 
 export default function Home() {
   return (
-    <section className="min-h-screen flex items-center font-anek-devanagari">
+    <section className="calc-min-h-screen md:calc-min-h-screen-md flex items-center font-anek-devanagari">
       <div className="w-5/6 md:w-2/3 m-auto">
         <div className="text-4xl md:text-5xl text-start leading-14 md:leading-18">
           <span className="block md:inline-block animate-fade-up">Hi, I am</span>
