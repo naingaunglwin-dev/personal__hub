@@ -23,12 +23,24 @@ export default function Footer() {
         </div>
 
         {/* Links */}
-        <div className="flex justify-center md:justify-start gap-10">
+        <div className="flex justify-center md:justify-start gap-14">
           <ul className="space-y-3">
             <li className="text-xl">Social</li>
-            <li className="text-sm opacity-80 hover:opacity-60 cursor-pointer flex items-center gap-1"><FaGithub/>github</li>
-            <li className="text-sm opacity-80 hover:opacity-60 cursor-pointer flex items-center gap-1"><FaInstagram/>instagram</li>
-            <li className="text-sm opacity-80 hover:opacity-60 cursor-pointer flex items-center gap-1"><FaTelegramPlane/>telegram</li>
+            <li className="cursor-pointer">
+              <a href="https://github.com/naingaunglwin-dev" target="_blank" className="flex items-center gap-1 text-sm opacity-80 hover:opacity-60">
+                <FaGithub/>github
+              </a>
+            </li>
+            <li className="cursor-pointer">
+              <a href="https://www.instagram.com/naingaunglwinn" target="_blank" className="flex items-center gap-1 text-sm opacity-80 hover:opacity-60">
+                <FaInstagram/>instagram
+              </a>
+            </li>
+            <li className="cursor-pointer">
+              <a href="https://t.me/naingaunglwin" target="_blank" className="flex items-center gap-1 text-sm opacity-80 hover:opacity-60">
+                <FaTelegramPlane/>telegram
+              </a>
+            </li>
           </ul>
 
           <ul className="space-y-3">
