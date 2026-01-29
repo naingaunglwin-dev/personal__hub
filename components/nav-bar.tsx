@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { TfiMenu } from "react-icons/tfi";
 import { IoClose } from "react-icons/io5";
 import Link from 'next/link';
+import { usePathname } from "next/navigation";
 
 const navItems = [
   { href: '/', label: 'Home' },
@@ -19,6 +20,8 @@ export default function NavBar() {
     setIsOpen(!isOpen);
   };
 
+  const pathname = usePathname();
+
   return (
     <>
       <nav className="p-4 fixed w-full z-40 h-16 md:h-20 backdrop-blur-xs md:backdrop-blur-none">
@@ -27,7 +30,7 @@ export default function NavBar() {
           <ul className="hidden md:flex items-center gap-3 border border-gray-200 px-2 py-1 rounded-md backdrop-blur-xs m-auto">
             {navItems.map((item) => (
               <Link key={item.href} href={item.href}>
-                <li className="flex items-center px-3 py-2 border border-transparent hover:border-gray-100 rounded-md hover:bg-gray-100 hover:cursor-pointer transition-colors">
+                <li className={`${pathname === item.href ? 'bg-gray-100' : ''} flex items-center px-3 py-2 rounded-md hover:bg-gray-100 hover:cursor-pointer transition-colors`}>
                   {item.label}
                 </li>
               </Link>
