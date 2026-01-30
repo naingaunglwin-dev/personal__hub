@@ -40,7 +40,7 @@ export default function NavBar() {
         <div className="relative flex items-center justify-between w-full max-w-6xl mx-auto">
           {/* Desktop Navigation */}
           <ul
-            className="hidden md:flex items-center gap-3 border border-gray-200 px-2 py-1 rounded-md m-auto relative overflow-hidden backdrop-blur-xs"
+            className="hidden md:flex items-center gap-3 border border-gray-200 px-2 py-1 rounded-md m-auto relative overflow-hidden bg-white"
           >
             <div 
               className="absolute top-1 bottom-1 bg-gray-100 rounded-md transition-all duration-300 ease-in-out"
