@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import {useState, useLayoutEffect} from 'react';
 import { TfiMenu } from "react-icons/tfi";
 import { IoClose } from "react-icons/io5";
 import Link from 'next/link';
@@ -15,6 +15,7 @@ const navItems = [
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeTabPosition, setActiveTabPosition] = useState({ left: 0, width: 0 });
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -22,19 +23,41 @@ export default function NavBar() {
 
   const pathname = usePathname();
 
+  useLayoutEffect(() => {
+    const activeIndex = navItems.findIndex(item => item.href === pathname);
+    if (activeIndex !== -1) {
+      const activeTab = document.getElementById(navItems[activeIndex].label)
+      if (activeTab) {
+        const { offsetLeft, offsetWidth } = activeTab;
+        setActiveTabPosition({ left: offsetLeft, width: offsetWidth });
+      }
+    }
+  }, [pathname]);
+
   return (
     <>
-      <nav className="p-4 fixed w-full z-40 h-16 md:h-20 backdrop-blur-xs md:backdrop-blur-none">
-        <div className="flex items-center justify-between w-full max-w-6xl mx-auto">
+      <nav className="p-4 fixed top-0 w-full z-40 h-16 md:h-20 backdrop-blur-xs md:backdrop-blur-none">
+        <div className="relative flex items-center justify-between w-full max-w-6xl mx-auto">
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center gap-3 border border-gray-200 px-2 py-1 rounded-md backdrop-blur-xs m-auto">
-            {navItems.map((item) => (
-              <Link key={item.href} href={item.href}>
-                <li className={`${pathname === item.href ? 'bg-gray-100' : ''} flex items-center px-3 py-2 rounded-md hover:bg-gray-100 hover:cursor-pointer transition-colors`}>
-                  {item.label}
-                </li>
-              </Link>
-            ))}
+          <ul
+            className="hidden md:flex items-center gap-3 border border-gray-200 px-2 py-1 rounded-md m-auto relative overflow-hidden backdrop-blur-xs"
+          >
+            <div 
+              className="absolute top-1 bottom-1 bg-gray-100 rounded-md transition-all duration-300 ease-in-out"
+              style={{
+                left: `${activeTabPosition.left}px`,
+                width: `${activeTabPosition.width}px`,
+              }}
+            />
+            {navItems.map((item) => {
+              return (
+                <Link key={item.href} href={item.href} id={item.label} className="relative">
+                  <li className="relative flex items-center px-3 py-2 rounded-md cursor-pointer">
+                    <span className="relative z-10">{item.label}</span>
+                  </li>
+                </Link>
+              )
+            })}
           </ul>
 
           {/* Mobile Menu Button */}
