@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Anek_Devanagari } from "next/font/google";
-import NavBar from "@/components/nav-bar";
-import Footer from "@/components/footer";
 import "./globals.css";
+import Template from "@/components/template";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,15 +33,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${anekDevanagari.variable} antialiased`}
       >
-        <div className="bg-dots min-h-screen flex items-center justify-center bg-white text-black w-full font-sans">
-          <div className="w-full">
-            <NavBar />
-            <main className="mt-16 md:mt-20">
-              {children}
-            </main>
-            <Footer />
-          </div>
-        </div>
+        <Template>
+          {children}
+        </Template>
       </body>
     </html>
   );
