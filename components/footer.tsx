@@ -44,32 +44,23 @@ export default function Footer() {
           </ul>
 
           <ul className="space-y-3">
-            <li className="text-xl">Projects</li>
+            <li className="text-xl">Websites</li>
             <li>
               <a
-                href="https://github.com/naingaunglwin-dev/novaframe"
+                href="https://yay-chin-yar-yay.vercel.app/"
                 target="_blank"
                 className="text-sm opacity-80 hover:opacity-60"
               >
-                novaframe
+                yay chin yar yay
               </a>
             </li>
             <li>
               <a
-                href="https://github.com/naingaunglwin-dev/event-dispatcher"
+                href="https://the-daily-quest.vercel.app/"
                 target="_blank"
                 className="text-sm opacity-80 hover:opacity-60"
               >
-                event-dispatcher
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/naingaunglwin-dev/dotenv"
-                target="_blank"
-                className="text-sm opacity-80 hover:opacity-60"
-              >
-                dotenv
+                daily quest
               </a>
             </li>
           </ul>
