@@ -29,7 +29,10 @@ export default function Project() {
   ];
 
   const [active, setActive] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const email = "naingaunglwin.dev@gmail.com";
 
   const openModal = (project: ProjectProps) => {
     setActive(project);
@@ -45,13 +48,38 @@ export default function Project() {
     }
   }, [isModalOpen])
 
+  const handleCopy = async () => {
+    if (!navigator?.clipboard) {
+      const textarea = document.createElement('textarea')
+      textarea.value = email
+      document.body.appendChild(textarea)
+      textarea.select()
+      document.execCommand('copy')
+      document.body.removeChild(textarea)
+    } else {
+      await navigator.clipboard.writeText(email)
+    }
+
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }
+
   return (
     <section className="calc-min-h-screen md:calc-min-h-screen-md flex items-center relative overflow-hidden font-sans">
+      {copied && (
+        <div className="absolute top-52 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded-md opacity-90 z-50">
+          Copied!
+        </div>
+      )}
       <span className="hidden lg:block absolute border-l border-gray-200 left-1/4 top-0 bottom-0"></span>
       <div className="relative w-full pb-4">
         <div className="w-full sm:w-11/12 lg:w-1/2 m-auto space-y-7">
           <div className="lg:border-l-4 border-gray-500 ps-4 pt-2 text-4xl">#Project</div>
           <div className="w-11/12 xl:w-2/3 m-auto">
+            <div className="text-lg md:text-2xl font-anek-devanagari my-16">
+              “If you have an idea, a question, or just want to talk about tech,
+              feel free to reach out at <span onClick={handleCopy} className="font-bold hover:cursor-pointer">{email}</span>”
+            </div>
             <div className="space-y-4">
               {projects.map((project) => (
                 <ProjectListItem
