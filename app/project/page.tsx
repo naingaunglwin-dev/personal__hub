@@ -28,7 +28,7 @@ export default function Project() {
     { title: "openbook", description: "Openbook is a simple online library application built with Laravel (API backend) and React (frontend)", tech: ["react", "laravel"], link: "naingaunglwin-dev/openbook" },
   ];
 
-  const [active, setActive] = useState(null);
+  const [active, setActive] = useState<ProjectProps | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [copied, setCopied] = useState(false);
 
