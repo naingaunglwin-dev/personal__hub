@@ -19,8 +19,8 @@ export default function Home() {
             repeat={Infinity}
           />
           <span className="block font-light text-lg md:text-2xl animate-fade-up animate-delay-400">
-              A passionate developer with over year of experience in PHP
-            </span>
+            A passionate developer with over year of experience in PHP
+          </span>
         </div>
       </div>
     </section>
