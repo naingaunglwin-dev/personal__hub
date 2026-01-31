@@ -1,4 +1,5 @@
-import { FaGithub, FaTelegramPlane, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaTelegramPlane, FaLinkedin } from "react-icons/fa";
+import { CgMail } from "react-icons/cg";
 
 export default function Footer() {
   return (
@@ -27,22 +28,22 @@ export default function Footer() {
           <ul className="space-y-3 text-start">
             <li className="text-xl">Social</li>
             <li className="cursor-pointer">
-              <a href="https://github.com/naingaunglwin-dev" target="_blank" className="flex items-center gap-1 text-sm opacity-80 hover:opacity-60">
+              <a href="https://github.com/naingaunglwin-dev" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-sm opacity-80 hover:opacity-60">
                 <FaGithub/>github
               </a>
             </li>
             <li className="cursor-pointer">
-              <a href="https://www.instagram.com/naingaunglwinn" target="_blank" className="flex items-center gap-1 text-sm opacity-80 hover:opacity-60">
-                <FaInstagram/>instagram
+              <a href="mailto:naingaunglwin.dev@gmail.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-sm opacity-80 hover:opacity-60">
+                <CgMail className="w-4 h-4"/>gmail
               </a>
             </li>
             <li className="cursor-pointer">
-              <a href="https://t.me/naingaunglwin" target="_blank" className="flex items-center gap-1 text-sm opacity-80 hover:opacity-60">
+              <a href="https://t.me/naingaunglwin" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-sm opacity-80 hover:opacity-60">
                 <FaTelegramPlane/>telegram
               </a>
             </li>
             <li className="cursor-pointer">
-              <a href="www.linkedin.com/in/naing-aung-lwin-8b55473a9" target="_blank" className="flex items-center gap-1 text-sm opacity-80 hover:opacity-60">
+              <a href="www.linkedin.com/in/naing-aung-lwin-8b55473a9" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-sm opacity-80 hover:opacity-60">
                 <FaLinkedin/>linkedin
               </a>
             </li>
@@ -55,6 +56,7 @@ export default function Footer() {
                 href="https://yay-chin-yar-yay.vercel.app/"
                 target="_blank"
                 className="text-sm opacity-80 hover:opacity-60"
+                rel="noopener noreferrer"
               >
                 yay chin yar yay
               </a>
@@ -64,6 +66,7 @@ export default function Footer() {
                 href="https://the-daily-quest.vercel.app/"
                 target="_blank"
                 className="text-sm opacity-80 hover:opacity-60"
+                rel="noopener noreferrer"
               >
                 daily quest
               </a>
