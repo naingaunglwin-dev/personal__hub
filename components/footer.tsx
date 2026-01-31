@@ -1,4 +1,4 @@
-import { FaGithub, FaTelegramPlane, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaTelegramPlane, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -24,7 +24,7 @@ export default function Footer() {
 
         {/* Links */}
         <div className="flex justify-center md:justify-start gap-14">
-          <ul className="space-y-3">
+          <ul className="space-y-3 text-start">
             <li className="text-xl">Social</li>
             <li className="cursor-pointer">
               <a href="https://github.com/naingaunglwin-dev" target="_blank" className="flex items-center gap-1 text-sm opacity-80 hover:opacity-60">
@@ -39,6 +39,11 @@ export default function Footer() {
             <li className="cursor-pointer">
               <a href="https://t.me/naingaunglwin" target="_blank" className="flex items-center gap-1 text-sm opacity-80 hover:opacity-60">
                 <FaTelegramPlane/>telegram
+              </a>
+            </li>
+            <li className="cursor-pointer">
+              <a href="www.linkedin.com/in/naing-aung-lwin-8b55473a9" target="_blank" className="flex items-center gap-1 text-sm opacity-80 hover:opacity-60">
+                <FaLinkedin/>linkedin
               </a>
             </li>
           </ul>
