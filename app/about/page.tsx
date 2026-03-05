@@ -1,7 +1,11 @@
+import { PageContainer } from "@/components/page-container";
+
 export default function About() {
   return (
-    <section className="calc-min-h-screen md:calc-min-h-screen-md flex items-center relative overflow-hidden font-anek-devanagari">
-      <span className="hidden lg:block absolute border-l border-gray-200 left-1/4 top-0 bottom-0"></span>
+    <PageContainer
+      className="font-anek-devanagari relative overflow-hidden"
+      borderLeft={true}
+    >
       <div className="relative w-full">
         <div className="w-full sm:w-2/3 lg:w-1/2 m-auto">
           <div className="lg:border-l-4 border-gray-500 ps-4 pt-2 text-4xl">#About</div>
@@ -10,6 +14,6 @@ export default function About() {
           </div>
         </div>
       </div>
-    </section>
+    </PageContainer>
   );
 };

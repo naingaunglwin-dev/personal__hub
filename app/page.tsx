@@ -1,10 +1,13 @@
 'use client'
 
 import { TypeAnimation } from "react-type-animation";
+import { PageContainer } from "@/components/page-container";
 
 export default function Home() {
   return (
-    <section className="calc-min-h-screen md:calc-min-h-screen-md flex items-center font-anek-devanagari">
+    <PageContainer
+      className="font-anek-devanagari"
+    >
       <div className="w-5/6 md:w-2/3 m-auto">
         <div className="text-4xl md:text-5xl text-start leading-14 md:leading-18">
           <span className="block md:inline-block animate-fade-up">Hi, I am</span>
@@ -23,6 +26,6 @@ export default function Home() {
           </span>
         </div>
       </div>
-    </section>
+    </PageContainer>
   );
 }
