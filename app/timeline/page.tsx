@@ -8,7 +8,7 @@ export default function Timeline() {
 
   return (
     <PageContainer
-      className="font-anek-devanagari relative overflow-hidden"
+      className="font-anek-devanagari"
       borderLeft={true}
     >
       <div className="relative w-full">

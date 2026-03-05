@@ -51,7 +51,7 @@ export default function Project() {
 
   return (
     <PageContainer
-      className="font-sans relative overflow-hidden"
+      className="font-sans"
       borderLeft={true}
     >
       {copied && (
